@@ -1,0 +1,72 @@
+html,
+body {
+  height: 100%;
+}
+
+#theheader {
+	max-height: 65px;
+}
+
+.likedpets img {
+	max-width:100px;
+}
+
+.likedpets li {
+	cursor:pointer;
+	padding:5px;
+	
+}
+
+.center {
+	text-align:center;
+}
+
+.animalpic {
+	box-shadow: 3px 3px 1px #aaaaaa;	
+}
+
+.infobox {
+	text-align:center;
+}
+
+.votebox {
+	width:100px;
+}
+
+.votebtn {
+	font-size:50px;
+}
+
+.upvote {
+	color:green;
+}
+
+.downvote {
+	color:red;
+}
+
+.headerlogo {
+height:60%;
+width:60%;	
+}
+
+.dogsorcats {
+	margin-left:20%;
+}
+
+
+#detail-table {
+    font-size: 1em;
+    width: 24em;
+}
+
+.detail_text {
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Arial;
+    line-height: 22px !important;
+}
+
+ul {
+  list-style: none;
+}
