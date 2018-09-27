@@ -22,7 +22,9 @@ body {
 }
 
 .animalpic {
-	box-shadow: 3px 3px 1px #aaaaaa;	
+	box-shadow: 3px 3px 1px #aaaaaa;
+	min-width: 400px;	
+	max-width: 400px;	
 }
 
 .infobox {
