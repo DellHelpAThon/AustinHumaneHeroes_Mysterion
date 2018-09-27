@@ -21,6 +21,16 @@ var TodoMVC = TodoMVC || {};
 	]
 
 
+
+	fetch('https://ahs.cfapps.io/getpets')
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (myJson) {
+			console.log(JSON.stringify(myJson));
+		});
+
+
 	//localStorage.setItem("key", "value");
 
 
