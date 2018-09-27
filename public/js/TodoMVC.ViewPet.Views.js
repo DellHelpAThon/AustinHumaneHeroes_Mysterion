@@ -45,7 +45,11 @@ var TodoMVC = TodoMVC || {};
 			if (!this.currentPet) {
 				console.log('could not find pet!!!')
 				this.gotoNextPet()
+				return
 			}
+
+			this.currentPet.Age = moment(this.currentPet.DateOfBirth[0]).toNow(true)
+			this.currentPet.DateOfBirth[0] = moment(this.currentPet.DateOfBirth[0]).format(" MMMM Do YYYY");
 
 
 			//	this.listenTo(filterChannel.request('filterState'), 'change:filter', this.render, this);
