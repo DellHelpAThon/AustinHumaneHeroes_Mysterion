@@ -25,6 +25,7 @@ var TodoMVC = TodoMVC || {};
 		events: {
 			'click .upvote': 'upvote',
 			'click .downvote': 'downvote',
+			'click .likedpets': 'gotoLikedpet'
 		},
 
 		collectionEvents: {
@@ -43,6 +44,7 @@ var TodoMVC = TodoMVC || {};
 			this.currentPet = this.getPetData(data.id)
 			if (!this.currentPet) {
 				console.log('could not find pet!!!')
+				this.gotoNextPet()
 			}
 
 
@@ -78,7 +80,11 @@ var TodoMVC = TodoMVC || {};
 			this.gotoNextPet()
 		},
 
-
+		gotoLikedpet: function (e) {
+			var target = $(e.currentTarget)
+			var id = target.data('petid')
+			window.goToNextPet(id)
+		},
 		gotoNextPet: function () {
 
 			var nextId = this.getIdWeHaveNotSeenYet()
@@ -123,7 +129,7 @@ var TodoMVC = TodoMVC || {};
 			//<li class="likedpets" title="<%= Name %>" data-petid="<%= AdoptionID %>"> <img src="<%= Photo %>" /> </li>
 			var res = ''
 			window.likedPets.map(function (x) {
-				res += '<li class="likedpets" title="' + x.Name + '" data-petid="' + x.AdoptionID + '"> <img src="' + x.Photo + '" /> </li>'
+				res += '<li class="likedpets" title="' + x.Name + '" data-petid="' + x.AdoptionID + '"><a href="/#' + x.AdoptionID + '"> <img src="' + x.Photo + '" /> </a></li>'
 			})
 
 			return res;

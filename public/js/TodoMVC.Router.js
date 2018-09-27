@@ -10,7 +10,7 @@ var TodoMVC = TodoMVC || {};
 	TodoMVC.Router = Mn.AppRouter.extend({
 		appRoutes: {
 			':id': 'viewPet',
-			'main': 'viewPet',
+			'*main': 'viewPet',
 			//'*filter': 'filterItems'
 		}
 	});
