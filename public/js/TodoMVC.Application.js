@@ -10,6 +10,15 @@ var TodoMVC = TodoMVC || {};
 
 	window.likedPets = localStorage.getItem("likedpets") || []
 
+	window.allPets = [
+		{
+			id: '123',
+			name: 'Snoopy',
+			img: 'http://g.petango.com/photos/652/7fcc3051-19d1-48f2-8e09-8e00650b21bd.jpg',
+			breed: 'Doverman',
+			sex: 'male'
+		},
+	]
 
 
 	//localStorage.setItem("key", "value");
