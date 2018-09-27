@@ -15,6 +15,12 @@ var TodoMVC = TodoMVC || {};
 		}
 	});
 
+	window.goToNextPet = function (loc) {
+		window.location.hash = loc
+	};
+
+
+
 	TodoMVC.Controller = Mn.Object.extend({
 
 		initialize: function () {

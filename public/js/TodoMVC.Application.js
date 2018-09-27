@@ -8,11 +8,24 @@ var TodoMVC = TodoMVC || {};
 
 
 
-	window.likedPets = localStorage.getItem("likedpets") || []
+	var likedPets = localStorage.getItem("likedpets")
+	if (likedPets && likedPets.length > 5) {
+		window.likedPets = JSON.parse(likedPets)
+	} else {
+		window.likedPets = []
+	}
+
+	var dislikedPets = localStorage.getItem("dislikedPets")
+	if (dislikedPets && dislikedPets.length > 5) {
+		window.dislikedPets = JSON.parse(dislikedPets)
+	} else {
+		window.dislikedPets = []
+	}
+
+	//window.dislikedPets = JSON.parse(localStorage.getItem("dislikedPets")) || []
 
 
 
-	//localStorage.setItem("key", "value");
 
 	var TodoApp = Mn.Application.extend({
 		setRootLayout: function () {
