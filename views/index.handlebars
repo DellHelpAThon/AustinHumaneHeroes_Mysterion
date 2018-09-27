@@ -30,13 +30,7 @@
 
 
 	<script type="text/html" id="template-todoItemView">
-		<div class="view">
-			<input class="toggle" type="checkbox" <% if (completed) { %>checked
-			<% } %>>
-				<label><%- title %></label>
-				<button class="destroy"></button>
-		</div>
-		<input class="edit" value="<%- title %>">
+
 	</script>
 
 
@@ -47,9 +41,9 @@
 			</div>
 			<div class="col-md-auto">
 				<h1 class="h3 mb-3 font-weight-normal center">
-					<%= pet.name %>
+					<%= pet.Name[0] %>
 				</h1>
-				<img class="animalpic" src="<%= pet.img %>">
+				<img class="animalpic" src="<%= pet.Photo[0] %>">
 				<div class="infobox">
 
 					<button class="btn btn-lg btn-link votebtn upvote"><i class="fa fa-thumbs-up"></i></button>
@@ -59,41 +53,50 @@
 						<tbody>
 							<tr>
 								<td class="detail_text">ANIMAL NUMBER:</td>
-								<td class="description-text">39701802</td>
+								<td class="description-text">
+									<%= pet.AdoptionID[0] %>
+								</td>
 							</tr>
 							<tr>
 								<td class="detail_text">BREED:</td>
-								<td class="description-text">Domestic Shorthair</td>
+								<td class="description-text">
+									<%= pet.PrimaryBreed[0] %>
+								</td>
 							</tr>
 							<tr>
 								<td class="detail_text">SEX:</td>
-								<td class="description-text">Male</td>
+								<td class="description-text">
+									<%= pet.Sex[0] %>
+								</td>
 							</tr>
 							<tr>
 								<td class="detail_text">DOB:</td>
-								<td class="description-text">06/18/2018</td>
+								<td class="description-text">
+									<%= pet.DateOfBirth[0] %>
+								</td>
 							</tr>
 							<tr>
 								<td class="detail_text">AGE:</td>
-								<td class="description-text">3 months</td>
+								<td class="description-text">
+									<%= pet.DateOfBirth[0] %>
+								</td>
 							</tr>
 							<tr>
-								<td class="detail_text">WEIGHT:</td>
-								<td class="description-text">2 pounds</td>
+								<td class="detail_text">SIZE:</td>
+								<td class="description-text">
+									<%= pet.Size[0] %>
+								</td>
 							</tr>
-							<tr>
-								<td class="detail_text">COLOR:</td>
-								<td class="description-text">Black</td>
-							</tr>
+
+
 							<tr>
 								<td class="detail_text">LOCATION:</td>
-								<td class="description-text">Cattery</td>
-							</tr>
-							<tr>
-								<td class="detail_text">ADOPTION FEE:</td>
 								<td class="description-text">
-									$100.00 </td>
+									<%= pet.PostZipCode[0] %>
+								</td>
 							</tr>
+
+
 
 						</tbody>
 					</table>

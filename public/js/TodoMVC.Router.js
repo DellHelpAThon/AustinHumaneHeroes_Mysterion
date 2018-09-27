@@ -41,9 +41,12 @@ var TodoMVC = TodoMVC || {};
 		},
 
 		viewPet: function (id) {
-			TodoMVC.App.root.showChildView('main', new TodoMVC.ViewPetView({
-				id: id
-			}));
+			this.loadPets(function () {
+				TodoMVC.App.root.showChildView('main', new TodoMVC.ViewPetView({
+					id: id
+				}));
+			})
+
 		},
 
 
@@ -57,6 +60,42 @@ var TodoMVC = TodoMVC || {};
 		filterItems: function (filter) {
 			var newFilter = filter && filter.trim() || 'all';
 			filterChannel.request('filterState').set('filter', newFilter);
+		},
+
+		loadPets: function (cb) {
+
+			// window.allPets = [
+			// 	{
+			// 		id: '123',
+			// 		name: 'Snoopy',
+			// 		img: 'http://g.petango.com/photos/652/7fcc3051-19d1-48f2-8e09-8e00650b21bd.jpg',
+			// 		breed: 'Doverman',
+			// 		sex: 'male'
+			// 	},
+			// ]
+
+
+			if (window.allPets) {
+				return cb(window.allPets)
+			}
+
+			fetch('https://ahs.cfapps.io/getpets')
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (data) {
+					//console.log(JSON.stringify(data));
+					if (data && data.ArrayOfAnyType) {
+						window.allPets = data.ArrayOfAnyType.anyType;
+					}
+
+					console.log('window.allPets=', window.allPets)
+					return cb(window.allPets)
+
+				});
+
 		}
+
+
 	});
 })();

@@ -47,7 +47,7 @@ var TodoMVC = TodoMVC || {};
 		},
 
 		getPetData: function (id) {
-			var currentPet = window.allPets.find(x => x.id == id)
+			var currentPet = window.allPets.find(x => x.AdoptionID[0] == id)
 			//todo fallback 
 
 			return currentPet
