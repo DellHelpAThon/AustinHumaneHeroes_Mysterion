@@ -3,3 +3,6 @@
 .todoapp.filter-completed .todo-list .active {
 	display: none;
 }
+.upvote {
+	color: #35c2dc;
+}
