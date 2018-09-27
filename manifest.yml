@@ -1,6 +1,6 @@
 ---
 applications:
-- name: mockedapiservice
+- name: ahs
   buildpack: nodejs_buildpack
   stack: cflinuxfs2
   command: node index.js

@@ -8,11 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.dell.com/Benjamin_C_Adams/MockedApiService.git"
+    "url": "https://github.com/DellHelpAThon/AustinHumaneHeroes_Mysterion.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "xml2js": "0.4.19"
   }
 }
