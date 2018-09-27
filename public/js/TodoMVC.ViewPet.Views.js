@@ -18,7 +18,8 @@ var TodoMVC = TodoMVC || {};
 		},
 
 		ui: {
-			toggle: '.toggle-all'
+			toggle: '.toggle-all',
+			likedpets: '.likedpets'
 		},
 
 		events: {
@@ -32,7 +33,8 @@ var TodoMVC = TodoMVC || {};
 		},
 		serializeData: function () {
 			return {
-				pet: this.currentPet
+				pet: this.currentPet,
+				likedpets: window.likedPets
 			}
 		},
 
@@ -90,6 +92,10 @@ var TodoMVC = TodoMVC || {};
 				return !window.dislikedPets.find(x => x.AdoptionID == item.AdoptionID[0]);
 			});
 
+			notSeenYet = notSeenYet.filter(function (item) {
+				return !window.likedPets.find(x => x.AdoptionID == item.AdoptionID);
+			});
+
 			return notSeenYet[0].AdoptionID[0]
 		},
 
@@ -106,6 +112,21 @@ var TodoMVC = TodoMVC || {};
 			// this.showChildView('listBody', new TodoMVC.ListViewBody({
 			// 	collection: this.collection
 			// }));
+
+			var likedHtml = this.generateLikedHtml()
+			this.ui.likedpets.html(likedHtml)
+
+		},
+
+
+		generateLikedHtml: function () {
+			//<li class="likedpets" title="<%= Name %>" data-petid="<%= AdoptionID %>"> <img src="<%= Photo %>" /> </li>
+			var res = ''
+			window.likedPets.map(function (x) {
+				res += '<li class="likedpets" title="' + x.Name + '" data-petid="' + x.AdoptionID + '"> <img src="' + x.Photo + '" /> </li>'
+			})
+
+			return res;
 		}
 	});
 })();

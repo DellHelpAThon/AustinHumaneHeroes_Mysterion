@@ -5,9 +5,6 @@ var TodoMVC = TodoMVC || {};
 (function () {
 	'use strict';
 
-
-
-
 	var likedPets = localStorage.getItem("likedpets")
 	if (likedPets && likedPets.length > 5) {
 		window.likedPets = JSON.parse(likedPets)
